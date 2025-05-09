@@ -6,8 +6,7 @@ import { FREE_GIFT, PRODUCTS, THRESHOLD } from '../Data/Constants'
 
 const Carts = () => {
   const [carts, setCarts] = useState<CartItem[]>([])
-  const [showGift, setShowGift] = useState(false);
-  const [giftAdded, setGiftAdded] = useState(false);
+
   const calculateTotal = () => {
     const excludedFreeGift = carts.filter((item) => item.id !== 99);
     const total = excludedFreeGift.reduce(function(acc,curr){

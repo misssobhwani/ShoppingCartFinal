@@ -8,7 +8,7 @@ import Carts from './Components/Carts';
 function App() {
   return (
     <div className="App">
-     <ShoppingCarts/>
+     <Carts/>
     </div>
   );
 }
