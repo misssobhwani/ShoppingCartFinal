@@ -80,7 +80,7 @@ button {
 }
 .progress-fill {
   height: 100%;
-  background-color: #4caf50;
+  background-color: #2d7df7;
   transition: width 0.4s ease-in-out;
 }
 .cart-item button {
@@ -97,4 +97,16 @@ button {
   padding: 10px;
   margin: 10px 0;
   border-radius: 6px;
+}
+.cart-body{
+  background-color: #D3D3D3;
+  padding: 20px;
+}
+.product-title{
+  text-align: left;
+}
+.subtotal-div{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
 }

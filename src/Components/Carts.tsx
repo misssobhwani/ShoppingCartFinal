@@ -1,7 +1,7 @@
 
 import { useState } from 'react'
 import { CartItem, Product } from '../Types/Cart.type'
-import { PRODUCTS, THRESHOLD } from '../Data/Constants'
+import { FREE_GIFT, PRODUCTS, THRESHOLD } from '../Data/Constants'
 
 
 const Carts = () => {
@@ -59,9 +59,9 @@ const Carts = () => {
     //setCarts((prevCart) => prevCart.filter((item) => item.id !== productId));
   }
   return (
-    <div>
+    <div className='cart-body'>
       <h1>Shopping Cart</h1>
-      <h2>Products</h2>
+      <h2 className="product-title">Products</h2>
       <div className='Product-list'>
         {PRODUCTS.map((product) => (
           <div key={product.id} className='Product'>
@@ -72,7 +72,12 @@ const Carts = () => {
         ))}
       </div>
 
-      
+    <h3>Cart Summary</h3>
+    <div className='subtotal-div'>
+      <div>Subtotal</div>
+      <div>${subtotal}</div>
+    </div>
+    {subtotal>=THRESHOLD && <div>You got a free Wireless Mouse!</div>}
     <div className='progress-container'></div>
       <div className="progress-info">
           {subtotal >= THRESHOLD ? (
@@ -100,6 +105,14 @@ const Carts = () => {
             </>
           </div>
         ))
+      }
+      {subtotal>=THRESHOLD && <div key={FREE_GIFT.id} className='cart-item'>
+            <h3 className='cart-info'>{FREE_GIFT.name}</h3>
+            <p className='cart-info'>Price: ${FREE_GIFT.price}</p>
+            <p className='cart-info'>Quantity: {1}</p>
+            <p className='cart-info'>Free Gift 🎁✨</p>
+          </div>
+
       }
       {carts.length === 0 && <div>
         <div>Your cart is empty</div>
